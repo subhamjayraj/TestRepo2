@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="basic">
+	<test name="APPTest">	
+		<classes>
+			<class name="com.tomtom.practice.AppTest" />
+		</classes>
+	</test>
+	<test name="SELENIUMTest">	
+		<classes>
+			<class name="com.tomtom.suite.SeleniumTest" />
+		</classes>
+	</test>
+</suite>
