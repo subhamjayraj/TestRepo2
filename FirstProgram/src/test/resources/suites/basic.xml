@@ -8,7 +8,7 @@
 	</test>
 	<test name="SELENIUMTest">	
 		<classes>
-			<class name="com.tomtom.suite.SeleniumTest" />
+			<class name="com.tomtom.practice.SeleniumTest" />
 		</classes>
 	</test>
 </suite>
