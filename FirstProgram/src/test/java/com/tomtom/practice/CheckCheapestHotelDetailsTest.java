@@ -17,6 +17,7 @@ public class CheckCheapestHotelDetailsTest extends BaseTest{
 	public void testCheapestHotel(){
 		
 		HomePage homePage = new HomePage(driver);
+		WaitHelper.ThreadWait(3);
 		Assert.assertTrue(homePage.verifyHomePageTitle(driver.getTitle()));	
 		
 		HotelsHomePage hotelshmpage = homePage.clickOnHotelLink();
