@@ -8,7 +8,7 @@
 			<class name="com.tomtom.practice.CancelRefundErrorMessageTest" />
 			<class name="com.tomtom.practice.CheckCheapestHotelDetailsTest" />
 		  	<class name="com.tomtom.practice.PrintSMSErrorMessageTest"/>  
-		 <!-- 	<class name="com.tomtom.practice.SearchCheapestBusTest "/> -->
+		 	<class name="com.tomtom.practice.SearchCheapestBusTest"/> 
 		</classes>
 	</test>
 	
