@@ -20,7 +20,7 @@ public class SearchCheapestBusTest extends BaseTest{
 	
 		homePage.enterFromCity("Bangalore");
 		homePage.enterToCity("Pune");
-		homePage.setJourneyDate("20");		
+		homePage.setJourneyDate("30");		
 		
 		BusListPage busList=homePage.clickOnSearchBuses();				
 				

@@ -2,14 +2,17 @@ package com.redbus.pages;
 
 import java.util.List;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class BusListPage {
 
+	//private static final Logger log = Logger.getLogger(BusListPage.class);
 	WebDriver driver;
 	String pageTitle = "Book Ticket - Search Buses";
 

@@ -1,13 +1,15 @@
 package com.redbus.pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PrintSMSPage {
 
-	
+public class PrintSMSPage { 
+
+	private static final Logger log = Logger.getLogger(PrintSMSPage.class);
 	WebDriver driver;
 	private String pageTitle="Print Ticket/SMS | redBus™";
 	private String invalidMessage = "Please enter Ticket Number";
@@ -43,6 +45,7 @@ public class PrintSMSPage {
 	}
 
 	public String getPageTitle(){
+		log.info("Expected page title : "+pageTitle);
 		return pageTitle;
 	}
 	
@@ -55,27 +58,33 @@ public class PrintSMSPage {
 	}
 	
 	public void setTicketNumber(String ticketNo){
+		
+		log.info("Enterting the ticket Number as : "+ticketNo);
 		ticketNumber.clear();
 		ticketNumber.sendKeys(ticketNo);
 	}
 	
 	public void clickPrintTicket(){
+		log.info("Selecting the Print ticket checkbox");
+		if(!printTicket.isSelected()) 
 		printTicket.click();
 	}
 	
 		
 	public void clickTicketbySms(){
+		log.info("Selecting the Get mTicket by SMS ticket checkbox");
 		ticketBySms.click();
 	}
 	
 	public void clickTicketbyEmail(){
+		log.info("Selecting the Get Ticket by Email ticket checkbox");
 		ticketByMail.click();
 	}
 	
 	public void clickSubmitButton(){
+		log.info("Clicking Submit button");
 		submitButton.click();
-	}
-	
+	}	
 	
 	public String invlidMessageShown(){	 
 		return invalidMsg.getText();

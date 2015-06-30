@@ -10,10 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HotelsListPage {
 
-	WebDriver driver;
-	
-
-	
+	WebDriver driver;	
 	
 	@FindBy(id="resultsBlock")
 	WebElement hotelsList ;
