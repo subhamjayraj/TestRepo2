@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -17,6 +18,8 @@ public class HomePage {
 
 	WebDriver driver;
 	String pageTitle = "redBus : Online Bus Ticket Booking, Book Volvo AC Bus Tickets, Reservation";
+	public String myAccountText = "My Account";
+	public String signUpInText = "Sign Up / Sign In";
 
 	@FindBy(id="ctl00_hotelDiv")
 	WebElement hotels ;
@@ -47,8 +50,23 @@ public class HomePage {
 
 	@FindBy(linkText="Print/SMS Ticket")
 	WebElement printSmsLink ;
+	
+	@FindBy(id="signInLink")
+	WebElement signUpIn ;
+	
+	@FindBy(tagName="iframe")
+	List<WebElement> frameList ;
+	
+	@FindBy(id="accountLink")
+	WebElement myAccountLink ;
+	
+	@FindBy(id="signOutLink")
+	WebElement signOutLink ;
+	
+	@FindBy(id="signInLink")
+	WebElement signUpInLink ;
 
-
+	
 
 	public HomePage(WebDriver driver){
 		this.driver = driver;
@@ -94,10 +112,8 @@ public class HomePage {
 	}
 
 
-	public boolean verifyHomePageTitle(String title){
-		
-	//	BaseTest.Logg1.info("Actual title of Home page is "+title);
-		
+	public boolean verifyHomePageTitle(String title){		
+	
 		log.info("Actual title of Home page is "+title);
 		log.info("Expected title of Home page is "+pageTitle);
 		
@@ -121,5 +137,29 @@ public class HomePage {
 		printSmsLink.click();
 		return new PrintSMSPage(driver);
 	}
+	
+	public LoginFramePage clickOnSignUpInSwitchToLoginframe(){
+		log.info("Clicking on Sign Up /Sign In");
+		signUpIn.click();		
+		driver.switchTo().frame(frameList.size() - 1);
+		log.info("Switching to Login iframe iframe");
+		
+		return new LoginFramePage(driver);
+	}
+	
+	public String getMyAccountText(){
+		log.info("Actual text is : "+myAccountLink.getText());
+		 return myAccountLink.getText();
+	}
 
+	public HomePage clickOnSignOutLink(){
+		log.info("Clicking on SignOut link on Home page");
+		signOutLink.click();
+		return this;
+	}
+	
+	public String getsignUpInText(){
+		log.info("Actual text is : "+signUpInLink.getText());
+		return signUpInLink.getText();
+	}
 }

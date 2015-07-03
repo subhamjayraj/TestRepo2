@@ -1,17 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="basic1">
-	<test name="APPTest">	
+	<test name="APPTest">
 		<classes>
-		<!-- 	<class name="com.tomtom.practice.AppTest" />
-			<class name="com.tomtom.practice.SeleniumTest" />  -->
-			<class name="com.tomtom.practice.CancelRefundErrorMessageTest" />			
-		  	<class name="com.tomtom.practice.PrintSMSErrorMessageTest"/>  
-	  	  	<class name="com.tomtom.practice.CheckCheapestHotelDetailsTest" />
-		 	<class name="com.tomtom.practice.SearchCheapestBusTest"/>    
+   	<!-- <class name="com.tomtom.practice.AppTest" /> 
+			<class name="com.tomtom.practice.SeleniumTest" />                  -->
+			<class name="com.tomtom.practice.CancelRefundErrorMessageTest" />
+			<class name="com.tomtom.practice.PrintSMSErrorMessageTest" />
+			<class name="com.tomtom.practice.CheckCheapestHotelDetailsTest" />
+			<class name="com.tomtom.practice.SearchCheapestBusTest" />
+			<class name="com.tomtom.practice.signInOutTest" />
+
 		</classes>
 	</test>
-	
-		
+
+
 </suite>
 
