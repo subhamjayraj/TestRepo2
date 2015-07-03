@@ -9,8 +9,7 @@
 			<class name="com.tomtom.practice.PrintSMSErrorMessageTest" />
 			<class name="com.tomtom.practice.CheckCheapestHotelDetailsTest" />
 			<class name="com.tomtom.practice.SearchCheapestBusTest" />
-			<class name="com.tomtom.practice.signInOutTest" />
-
+			<class name="com.tomtom.practice.SignInOutTest" />
 		</classes>
 	</test>
 
