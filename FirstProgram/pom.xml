@@ -39,7 +39,7 @@
 					<configuration>
 						<testFailureIgnore>true</testFailureIgnore>
 						<suiteXmlFiles>
-							<suiteXmlFile>src/test/resources/suites/basic1.xml</suiteXmlFile>
+							<suiteXmlFile>src/test/resources/suites/${suite}.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 
