@@ -1,20 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="basic">
-	<test name="APPTest">	
+<suite name="sanity">
+
+	<test name="Sanity Test">
 		<classes>
 			<class name="com.tomtom.practice.AppTest" />
-		</classes>
-	</test>
-	<test name="SELENIUMTest">	
-		<classes>
 			<class name="com.tomtom.practice.SeleniumTest" />
-		</classes>
-	</test>
-	
-	<test name="RedBus">	
-		<classes>
 			<class name="com.tomtom.practice.CancelRefundErrorMessageTest" />
+			<class name="com.tomtom.practice.PrintSMSErrorMessageTest" />
+			<class name="com.tomtom.practice.SignInOutTest" />
 		</classes>
 	</test>
 </suite>
