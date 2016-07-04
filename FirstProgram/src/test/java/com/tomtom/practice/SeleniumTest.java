@@ -3,8 +3,10 @@ package com.tomtom.practice;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.redbus.base.BaseTest;
 
-public class SeleniumTest {
+
+public class SeleniumTest extends BaseTest{
     
     @Test
     public void testApp()

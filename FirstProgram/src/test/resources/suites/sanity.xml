@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="sanity">
+<suite name="sanity" thread-count ="5" parallel="classes"  >
 
 	<test name="Sanity Test">
 		<classes>

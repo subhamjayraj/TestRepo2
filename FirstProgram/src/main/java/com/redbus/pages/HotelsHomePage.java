@@ -15,9 +15,9 @@ public class HotelsHomePage {
 	private static final Logger log = Logger.getLogger(HotelsHomePage.class);
 
 	WebDriver driver;
-	String pageTitle = "Online Hotel Booking, Hotels in India, Luxury, Star, Budget Hotels -redBus.in";
+	String pageTitle = "Online Hotel Booking: Cheap, Budget & Luxury Star Hotels India – redBus.in";	                    
 
-	@FindBy(id="txtSource")
+	@FindBy(id="search_key")
 	WebElement destintion;
 
 	@FindBy(id="txtOnwardCalendar")
@@ -32,7 +32,7 @@ public class HotelsHomePage {
 	@FindBy(id="rbcal_txtReturnCalendar")
 	WebElement checkOutDateWidget;
 
-	@FindBy(id="searchBtn")
+	@FindBy(id="search_hotel") 
 	WebElement searchHotelsButton;
 
 	public HotelsHomePage(WebDriver driver){
@@ -42,7 +42,22 @@ public class HotelsHomePage {
 
 	public void setDestination(String dest){
 		log.info("Enterring City/Destination as : "+dest);
+		
+ 		destintion.click();
 		destintion.sendKeys(dest);
+		WaitHelper.ThreadWait(5);
+		List<WebElement> ele =driver.findElement(By.className("suggestions-box")).findElements(By.className("suggestion-row")) ;
+		List<WebElement> ele1 =driver.findElement(By.className("suggestions-box")).findElements(By.className("suggestion-row")) ;
+		System.out.println("-----total suggestion :"+ele.size());
+		for(WebElement option : ele){
+		WebElement sugg = option.findElement(By.cssSelector("div.name.suggestion-item-cl.gtm-location")) ;	
+		System.out.println("-----"+sugg.getText());
+	        if(sugg.getText().contains(dest) ) {
+	        	System.out.println("Trying to select: "+dest);
+	            sugg.click();
+	            break;
+	        }
+		}
 	}
 	
 	public void setCheckIndate(String date){

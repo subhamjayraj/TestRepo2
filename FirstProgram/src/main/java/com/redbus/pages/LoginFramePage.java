@@ -1,9 +1,12 @@
 package com.redbus.pages;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginFramePage {
@@ -13,7 +16,8 @@ public class LoginFramePage {
 	
 	WebDriver driver;
 	
-	@FindBy(linkText="SIGN IN")
+	
+	@FindBys({ @FindBy(id="signInView"), @FindBy(linkText="SIGN IN") })
 	WebElement signInLink ;
 	
 	@FindBy(id="email-mobile")
@@ -32,6 +36,7 @@ public class LoginFramePage {
 	
 	public void clickOnSignIn(){
 		log.info("Clicking on SIGN IN");
+		WaitHelper.ThreadWait(4);
 		signInLink.click();
 		WaitHelper.ThreadWait(2);
 	}

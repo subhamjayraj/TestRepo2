@@ -64,7 +64,10 @@ public class HomePage {
 	WebElement signOutLink ;
 	
 	@FindBy(id="signInLink")
-	WebElement signUpInLink ;
+	WebElement signUpInLink ;	
+	
+	@FindBy(id="modalCloseSmall")
+	WebElement closeButton ;
 
 	
 
@@ -141,9 +144,10 @@ public class HomePage {
 	public LoginFramePage clickOnSignUpInSwitchToLoginframe(){
 		log.info("Clicking on Sign Up /Sign In");
 		signUpIn.click();		
-		driver.switchTo().frame(frameList.size() - 1);
+		//	driver.switchTo().frame(frameList.size() - 1);		
+		driver.switchTo().frame(5);
 		log.info("Switching to Login iframe iframe");
-		
+
 		return new LoginFramePage(driver);
 	}
 	
@@ -162,4 +166,28 @@ public class HomePage {
 		log.info("Actual text is : "+signUpInLink.getText());
 		return signUpInLink.getText();
 	}
+
+	public HomePage clickOnCloseLoginFrame() throws InterruptedException {		
+		driver.switchTo().defaultContent();
+
+		Thread.sleep(5000);
+		List<WebElement> ele1 = driver.findElements(By.id("ctl00_body"));
+		System.out.println("------"+ ele1.size());
+
+		List<WebElement> ele2 = driver.findElement(By.id("ctl00_body")).findElements(By.className("modalFrame"));
+		System.out.println("------"+ ele2.size());
+
+		for(WebElement ee : ele2){
+			try{
+				ee.findElement(By.className("modalCloseSmall")).click();	
+			}catch(Exception e){
+
+			}
+		}		
+
+		return new HomePage(driver);
+	}
+	
+	
+		
 }

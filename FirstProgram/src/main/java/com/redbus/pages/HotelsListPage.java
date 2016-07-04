@@ -11,11 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 public class HotelsListPage {
 
 	WebDriver driver;	
-	
-	@FindBy(id="resultsBlock")
+
+	@FindBy(id="hotel_items")
 	WebElement hotelsList ;
-	
-	@FindBy(className="locAndDate")
+
+	@FindBy(id="hotels_meta")
 	WebElement HeadingInput ;
 
 	public HotelsListPage(WebDriver driver){
@@ -24,29 +24,31 @@ public class HotelsListPage {
 	}
 
 
-	
+
 	public int HotelDetailsHavingMinimumPrice(){
-		List<WebElement> rows=hotelsList.findElement(By.className("HotelsList")).findElements(By.tagName("li")); 
-		
+		List<WebElement> rows=hotelsList.findElements(By.tagName("li")); 
+		System.out.println("------------Minimum hotel price----"+ rows.size() );
 		int mini = 10000;
 		int price = 0;
-		for (int i=0;i<rows.size();i+=8) {
-			 price = Integer.parseInt(RemoveCommaInPrice( rows.get(i).findElement(By.className("ReducedFare")).getText()));
+		for (WebElement e : rows) {
+			WebElement el = e.findElement(By.cssSelector("div.fl.w-65.hotel-details")).findElement(By.className("oh"))
+					.findElement(By.cssSelector("div.fl.w-25.price-info")).findElement(By.className("new-fare"));			 
+			price = Integer.parseInt(el.getText().trim().substring(4));			
 			if( price < mini )
 				mini=price ;			
-		}	
+		}
 		System.out.println("------------Minimum hotel price----"+ mini );
 		return mini;
-		
+
 	}
 
 	public static  String RemoveCommaInPrice(String str){
 		return str.replaceAll(",", "");	
 	}
-	
+
 	public boolean verfyHeadingInputPresent(){
 		return HeadingInput.isDisplayed();		
 	}
-	
-	
+
+
 }

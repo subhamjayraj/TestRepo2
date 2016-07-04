@@ -12,7 +12,7 @@ public class SignInOutTest extends BaseTest{
 	
 	
 	@Test
-	public void signInOutTest(){
+	public void signInOutTest() throws InterruptedException{
 		
 		HomePage homePage = new HomePage(driver);
 		Assert.assertTrue(homePage.verifyHomePageTitle(driver.getTitle()));	
@@ -23,6 +23,7 @@ public class SignInOutTest extends BaseTest{
 		loginFramePage.setEmailMobile("subhamjay96@mindtree.com");
 		loginFramePage.setPassword("123456");
 		HomePage homePage1= loginFramePage.clickOnSignInButton();
+		homePage1 = homePage1.clickOnCloseLoginFrame();
 		
 		WaitHelper.ThreadWait(5);		
 		

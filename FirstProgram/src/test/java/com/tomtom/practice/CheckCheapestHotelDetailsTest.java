@@ -27,11 +27,11 @@ public class CheckCheapestHotelDetailsTest extends BaseTest{
 		Assert.assertEquals(driver.getTitle(), hotelshmpage.getHotelsHomePageTitle());
 		
 		hotelshmpage.setDestination("Bangalore");
-		hotelshmpage.setCheckIndate("23");
-		hotelshmpage.setCheckOutdate("25");
+	//	hotelshmpage.setCheckIndate("23");
+	//	hotelshmpage.setCheckOutdate("25");
 		
 		HotelsListPage hotelslistPage=hotelshmpage.clickOnSearchHotelsButton();
-		WaitHelper.ThreadWait(10);
+		WaitHelper.ThreadWait(5);
 		
 		Assert.assertTrue(hotelslistPage.verfyHeadingInputPresent());
 		WaitHelper.ThreadWait(5);
