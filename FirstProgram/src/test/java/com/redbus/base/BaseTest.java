@@ -47,16 +47,16 @@ public class BaseTest {
 	public void setUp() throws InterruptedException{
 
 		log.info(" ---------- Start of the Test Case : "+this.getClass().getSimpleName()+" ---------- ");
-		DesiredCapabilities cap =  DesiredCapabilities.firefox() ;
+		/*DesiredCapabilities cap =  DesiredCapabilities.firefox() ;
 		cap.setBrowserName("firefox");
-		cap.setPlatform(Platform.WIN10);
-		//	driver=new FirefoxDriver();
-		try {
+		cap.setPlatform(Platform.WIN10);*/
+			driver=new FirefoxDriver();
+		/*try {
 			driver= new RemoteWebDriver(new URL("http://192.168.1.106:4444/wd/hub") , cap);
 		} catch (MalformedURLException e) {
 			
 			e.printStackTrace();
-		}
+		}*/
 		driver.manage().window().maximize();
 		driver.get("https://www.redbus.in");
 
