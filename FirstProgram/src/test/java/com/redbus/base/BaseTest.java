@@ -72,10 +72,10 @@ public class BaseTest {
 
 		log.info("--------- in @AfterMethod -----------");
 
-		if (testResult.getStatus() == ITestResult.FAILURE) { 
+		/*if (testResult.getStatus() == ITestResult.FAILURE) { 
 			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(src, new File("F:\\image_"+System.nanoTime()/10000+".png") );
-		}
+		}*/
 	}
 
 	@AfterClass(alwaysRun =true)
